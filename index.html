@@ -127,7 +127,7 @@
 
                             <div class="hero-visual">
                                 <div class="hero-image">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                                    <img src="https://i.ibb.co/zT8pQBLR/arsene.jpg" 
                                          alt="Kwizera Arsene" class="profile-image">
                                     <div class="image-glow"></div>
                                 </div>
@@ -1217,32 +1217,8 @@
     <div id="toast-container" class="toast-container"></div>
 
     <!-- Scripts -->
-    <script>
-        // Initialize Lucide Icons
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
-
-        // Initialize splash screen behavior
-        document.addEventListener('DOMContentLoaded', () => {
-            const splashScreen = document.getElementById('splash-screen');
-            const mainContent = document.getElementById('main-content');
-            
-            // Show splash screen for 3 seconds
-            setTimeout(() => {
-                splashScreen.classList.add('exit');
-                
-                // After exit animation, hide splash and show main content
-                setTimeout(() => {
-                    splashScreen.style.display = 'none';
-                    mainContent.classList.remove('hidden');
-                    mainContent.classList.add('page-3d-enter');
-                }, 1000);
-            }, 3000);
-        });
-    </script>
+    <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/forms.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>
