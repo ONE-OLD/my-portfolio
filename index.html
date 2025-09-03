@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwizera Arsene - Full Stack Developer & UI/UX Designer</title>
+    <meta name="description" content="Portfolio of Kwizera Arsene - Full Stack Developer & UI/UX Designer specializing in React, Node.js, and modern web technologies.">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="floating-shapes">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="floating-shape shape-4"></div>
+                <div class="floating-shape shape-5"></div>
+            </div>
+            <div class="splash-text">
+                <h1 class="splash-title">hello, i'm</h1>
+                <h2 class="splash-name gradient-text">kwizera arsene</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <div class="nav-brand">
+                        <a href="#" class="brand-link" onclick="navigateTo('home')">
+                            <span class="gradient-text">Kwizera Arsene</span>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-menu" id="nav-menu">
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="#about" class="nav-link" onclick="scrollToSection('about')">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#skills" class="nav-link" onclick="scrollToSection('skills')">Skills</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#projects" class="nav-link" onclick="scrollToSection('projects')">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#experience" class="nav-link" onclick="scrollToSection('experience')">Experience</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link" onclick="scrollToSection('contact')">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <button class="nav-toggle" id="nav-toggle" onclick="toggleNav()">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Page Content Container -->
+        <div id="page-content">
+            <!-- Home Page Content -->
+            <div id="home-page" class="page active">
+                <!-- Hero Section -->
+                <section id="hero" class="hero">
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <div class="hero-greeting">
+                                    <span class="greeting-text">Hello, I'm</span>
+                                </div>
+                                <h1 class="hero-title">
+                                    <span class="gradient-text">Kwizera Arsene</span>
+                                </h1>
+                                <p class="hero-subtitle">
+                                    Full Stack Developer & UI/UX Designer
+                                </p>
+                                <p class="hero-description">
+                                    I create beautiful, functional, and user-centered digital experiences 
+                                    that solve real-world problems with clean code and innovative design.
+                                </p>
+                                
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary" onclick="scrollToSection('projects')">
+                                        View My Work
+                                        <i data-lucide="arrow-right"></i>
+                                    </button>
+                                    <button class="btn btn-outline" onclick="navigateTo('contact')">
+                                        Get In Touch
+                                    </button>
+                                </div>
+
+                                <div class="hero-social">
+                                    <a href="https://github.com/kwizera-arsene" target="_blank" class="social-link">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                    <a href="https://linkedin.com/in/kwizera-arsene" target="_blank" class="social-link">
+                                        <i data-lucide="linkedin"></i>
+                                    </a>
+                                    <a href="mailto:kwizerarsn@gmail.com" class="social-link">
+                                        <i data-lucide="mail"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="hero-visual">
+                                <div class="hero-image">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                                         alt="Kwizera Arsene" class="profile-image">
+                                    <div class="image-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="scroll-indicator" onclick="scrollToSection('about')">
+                            <div class="scroll-text">Scroll to explore</div>
+                            <div class="scroll-arrow">
+                                <i data-lucide="arrow-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="about">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">About Me</h2>
+                            <p class="section-subtitle">
+                                Passionate about creating exceptional digital experiences
+                            </p>
+                        </div>
+
+                        <div class="about-content">
+                            <div class="about-text">
+                                <div class="about-intro">
+                                    <p>
+                                        Hi! I'm Kwizera Arsene, a passionate full-stack developer and UI/UX designer 
+                                        based in Kigali, Rwanda. I specialize in creating beautiful, functional, and 
+                                        user-centered digital experiences.
+                                    </p>
+                                    <p>
+                                        With over 5 years of experience in web development, I've had the privilege of 
+                                        working with startups, agencies, and established companies to bring their digital 
+                                        visions to life. My expertise spans from frontend technologies like React and Vue.js 
+                                        to backend solutions with Node.js and Python.
+                                    </p>
+                                </div>
+
+                                <div class="about-highlights">
+                                    <div class="highlight-item">
+                                        <i data-lucide="code"></i>
+                                        <div>
+                                            <h4>Clean Code</h4>
+                                            <p>Writing maintainable, scalable, and efficient code</p>
+                                        </div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i data-lucide="palette"></i>
+                                        <div>
+                                            <h4>Design Focus</h4>
+                                            <p>Creating intuitive and visually appealing interfaces</p>
+                                        </div>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i data-lucide="users"></i>
+                                        <div>
+                                            <h4>User-Centered</h4>
+                                            <p>Building solutions that prioritize user experience</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="about-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">50+</div>
+                                    <div class="stat-label">Projects Completed</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">5+</div>
+                                    <div class="stat-label">Years Experience</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">30+</div>
+                                    <div class="stat-label">Happy Clients</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">24/7</div>
+                                    <div class="stat-label">Support</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section id="skills" class="skills">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Skills & Expertise</h2>
+                            <p class="section-subtitle">
+                                Technologies and tools I use to bring ideas to life
+                            </p>
+                        </div>
+
+                        <div class="skills-content">
+                            <div class="skill-category">
+                                <h3 class="category-title">Frontend Development</h3>
+                                <div class="skill-grid">
+                                    <div class="skill-item">
+                                        <div class="skill-icon">⚛️</div>
+                                        <div class="skill-info">
+                                            <h4>React</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 95%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-icon">🅧</div>
+                                        <div class="skill-info">
+                                            <h4>Next.js</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 90%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-icon">📘</div>
+                                        <div class="skill-info">
+                                            <h4>TypeScript</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 88%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-icon">🎨</div>
+                                        <div class="skill-info">
+                                            <h4>Tailwind CSS</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 92%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3 class="category-title">Backend Development</h3>
+                                <div class="skill-grid">
+                                    <div class="skill-item">
+                                        <div class="skill-icon">🟢</div>
+                                        <div class="skill-info">
+                                            <h4>Node.js</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 93%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-icon">🐍</div>
+                                        <div class="skill-info">
+                                            <h4>Python</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 85%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-icon">🗄️</div>
+                                        <div class="skill-info">
+                                            <h4>MongoDB</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 88%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-icon">🐘</div>
+                                        <div class="skill-info">
+                                            <h4>PostgreSQL</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 82%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3 class="category-title">Design & Tools</h3>
+                                <div class="skill-grid">
+                                    <div class="skill-item">
+                                        <div class="skill-icon">🎨</div>
+                                        <div class="skill-info">
+                                            <h4>Figma</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 90%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-icon">☁️</div>
+                                        <div class="skill-info">
+                                            <h4>AWS</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 78%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-icon">🐳</div>
+                                        <div class="skill-info">
+                                            <h4>Docker</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-icon">🌿</div>
+                                        <div class="skill-info">
+                                            <h4>Git</h4>
+                                            <div class="skill-level">
+                                                <div class="skill-bar" style="width: 95%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="projects">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Featured Projects</h2>
+                            <p class="section-subtitle">
+                                A selection of my recent work and personal projects
+                            </p>
+                        </div>
+
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="E-commerce Platform">
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="#" class="project-link">
+                                                <i data-lucide="external-link"></i>
+                                            </a>
+                                            <a href="#" class="project-link">
+                                                <i data-lucide="github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="project-title">E-commerce Platform</h3>
+                                    <p class="project-description">
+                                        A full-featured e-commerce platform built with React, Node.js, and MongoDB. 
+                                        Features include user authentication, payment processing, and admin dashboard.
+                                    </p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">React</span>
+                                        <span class="tech-tag">Node.js</span>
+                                        <span class="tech-tag">MongoDB</span>
+                                        <span class="tech-tag">Stripe</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop" alt="Task Management App">
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="#" class="project-link">
+                                                <i data-lucide="external-link"></i>
+                                            </a>
+                                            <a href="#" class="project-link">
+                                                <i data-lucide="github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="project-title">Task Management App</h3>
+                                    <p class="project-description">
+                                        A collaborative task management application with real-time updates, 
+                                        drag-and-drop functionality, and team collaboration features.
+                                    </p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Vue.js</span>
+                                        <span class="tech-tag">Express</span>
+                                        <span class="tech-tag">Socket.io</span>
+                                        <span class="tech-tag">PostgreSQL</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Analytics Dashboard">
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="#" class="project-link">
+                                                <i data-lucide="external-link"></i>
+                                            </a>
+                                            <a href="#" class="project-link">
+                                                <i data-lucide="github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="project-title">Analytics Dashboard</h3>
+                                    <p class="project-description">
+                                        A comprehensive analytics dashboard with interactive charts, 
+                                        real-time data visualization, and customizable reporting features.
+                                    </p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Next.js</span>
+                                        <span class="tech-tag">TypeScript</span>
+                                        <span class="tech-tag">D3.js</span>
+                                        <span class="tech-tag">Prisma</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section id="experience" class="experience">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Experience</h2>
+                            <p class="section-subtitle">
+                                My professional journey and key milestones
+                            </p>
+                        </div>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2022 - Present</div>
+                                    <h3 class="timeline-title">Senior Full Stack Developer</h3>
+                                    <div class="timeline-company">TechCorp Solutions</div>
+                                    <p class="timeline-description">
+                                        Leading development of enterprise-level web applications, managing a team of 4 developers, 
+                                        and implementing CI/CD pipelines. Increased application performance by 40% through optimization.
+                                    </p>
+                                    <div class="timeline-skills">
+                                        <span class="skill-pill">React</span>
+                                        <span class="skill-pill">Node.js</span>
+                                        <span class="skill-pill">AWS</span>
+                                        <span class="skill-pill">Docker</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2020 - 2022</div>
+                                    <h3 class="timeline-title">Full Stack Developer</h3>
+                                    <div class="timeline-company">Digital Innovations Ltd</div>
+                                    <p class="timeline-description">
+                                        Developed responsive web applications using React, Express.js, and MongoDB. 
+                                        Built 15+ production applications serving 10k+ users.
+                                    </p>
+                                    <div class="timeline-skills">
+                                        <span class="skill-pill">React</span>
+                                        <span class="skill-pill">Express.js</span>
+                                        <span class="skill-pill">MongoDB</span>
+                                        <span class="skill-pill">Redux</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2019 - 2020</div>
+                                    <h3 class="timeline-title">Frontend Developer</h3>
+                                    <div class="timeline-company">StartupHub Rwanda</div>
+                                    <p class="timeline-description">
+                                        Created modern, responsive user interfaces for various startup projects. 
+                                        Improved user engagement by 35% through UX improvements.
+                                    </p>
+                                    <div class="timeline-skills">
+                                        <span class="skill-pill">JavaScript</span>
+                                        <span class="skill-pill">Vue.js</span>
+                                        <span class="skill-pill">SASS</span>
+                                        <span class="skill-pill">Figma</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="contact">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Get In Touch</h2>
+                            <p class="section-subtitle">
+                                I'm always interested in new opportunities and collaborations
+                            </p>
+                        </div>
+
+                        <div class="contact-content">
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i data-lucide="mail"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Email</h4>
+                                        <a href="mailto:kwizerarsn@gmail.com">kwizerarsn@gmail.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i data-lucide="phone"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Phone</h4>
+                                        <a href="tel:+250788123456">+250 788 123 456</a>
+                                    </div>
+                                </div>
+
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i data-lucide="map-pin"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Location</h4>
+                                        <span>Kigali, Rwanda</span>
+                                    </div>
+                                </div>
+
+                                <div class="availability-status">
+                                    <div class="status-indicator"></div>
+                                    <div>
+                                        <h4>Available for Work</h4>
+                                        <p>Currently accepting new projects and opportunities</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-cta">
+                                <h3>Ready to Start a Project?</h3>
+                                <p>Whether you need a full-stack web application, mobile app, or just want to discuss an idea, 
+                                   I'm here to help turn your vision into reality.</p>
+                                
+                                <div class="cta-buttons">
+                                    <button class="btn btn-primary" onclick="navigateTo('schedule')">
+                                        <i data-lucide="phone"></i>
+                                        Schedule a Call
+                                    </button>
+                                    <button class="btn btn-outline" onclick="navigateTo('resume')">
+                                        View Resume
+                                    </button>
+                                    <button class="btn btn-outline" onclick="navigateTo('contact')">
+                                        Get In Touch
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="footer-brand">
+                                <h3 class="gradient-text">Kwizera Arsene</h3>
+                                <p>Full Stack Developer & UI/UX Designer</p>
+                            </div>
+
+                            <div class="footer-links">
+                                <div class="footer-section">
+                                    <h4>Quick Links</h4>
+                                    <ul>
+                                        <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+                                        <li><a href="#projects" onclick="scrollToSection('projects')">Projects</a></li>
+                                        <li><a href="#experience" onclick="scrollToSection('experience')">Experience</a></li>
+                                        <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="footer-section">
+                                    <h4>Services</h4>
+                                    <ul>
+                                        <li><a href="#">Web Development</a></li>
+                                        <li><a href="#">Mobile Apps</a></li>
+                                        <li><a href="#">UI/UX Design</a></li>
+                                        <li><a href="#">Consulting</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="footer-section">
+                                    <h4>Connect</h4>
+                                    <div class="footer-social">
+                                        <a href="https://github.com/kwizera-arsene" target="_blank">
+                                            <i data-lucide="github"></i>
+                                        </a>
+                                        <a href="https://linkedin.com/in/kwizera-arsene" target="_blank">
+                                            <i data-lucide="linkedin"></i>
+                                        </a>
+                                        <a href="mailto:kwizerarsn@gmail.com">
+                                            <i data-lucide="mail"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Kwizera Arsene. All rights reserved.</p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+            <!-- Schedule Call Page -->
+            <div id="schedule-page" class="page">
+                <div class="page-header">
+                    <button class="btn btn-back" onclick="navigateTo('home')">
+                        <i data-lucide="arrow-left"></i>
+                        Back to Portfolio
+                    </button>
+
+                    <div class="page-title">
+                        <h1 class="gradient-text">Schedule a Call</h1>
+                        <p>Let's discuss your project, ideas, or potential collaboration opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="page-content">
+                    <div class="schedule-container">
+                        <div class="schedule-sidebar">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3><i data-lucide="calendar"></i> Meeting Options</h3>
+                                </div>
+                                <div class="card-content">
+                                    <div class="meeting-types">
+                                        <div class="meeting-type" data-type="video">
+                                            <i data-lucide="video"></i>
+                                            <span>Video Call</span>
+                                        </div>
+                                        <div class="meeting-type" data-type="phone">
+                                            <i data-lucide="phone"></i>
+                                            <span>Phone Call</span>
+                                        </div>
+                                        <div class="meeting-type" data-type="in-person">
+                                            <i data-lucide="map-pin"></i>
+                                            <span>In-Person Meeting</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3><i data-lucide="clock"></i> Duration</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p>30 minutes</p>
+                                    <small>Perfect for initial discussions and project overview</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="schedule-main">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Book Your Session</h3>
+                                </div>
+                                <div class="card-content">
+                                    <form id="schedule-form" class="schedule-form">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="schedule-name">Full Name *</label>
+                                                <input type="text" id="schedule-name" name="name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="schedule-email">Email Address *</label>
+                                                <input type="email" id="schedule-email" name="email" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="schedule-company">Company/Organization</label>
+                                                <input type="text" id="schedule-company" name="company">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="schedule-phone">Phone Number</label>
+                                                <input type="tel" id="schedule-phone" name="phone">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="schedule-date">Preferred Date *</label>
+                                                <input type="date" id="schedule-date" name="date" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="schedule-time">Preferred Time *</label>
+                                                <select id="schedule-time" name="time" required>
+                                                    <option value="">Select time</option>
+                                                    <option value="09:00">09:00</option>
+                                                    <option value="09:30">09:30</option>
+                                                    <option value="10:00">10:00</option>
+                                                    <option value="10:30">10:30</option>
+                                                    <option value="11:00">11:00</option>
+                                                    <option value="11:30">11:30</option>
+                                                    <option value="14:00">14:00</option>
+                                                    <option value="14:30">14:30</option>
+                                                    <option value="15:00">15:00</option>
+                                                    <option value="15:30">15:30</option>
+                                                    <option value="16:00">16:00</option>
+                                                    <option value="16:30">16:30</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="schedule-timezone">Timezone *</label>
+                                            <select id="schedule-timezone" name="timezone" required>
+                                                <option value="">Select timezone</option>
+                                                <option value="UTC-08:00">UTC-08:00 (PST)</option>
+                                                <option value="UTC-05:00">UTC-05:00 (EST)</option>
+                                                <option value="UTC+00:00">UTC+00:00 (GMT)</option>
+                                                <option value="UTC+01:00">UTC+01:00 (CET)</option>
+                                                <option value="UTC+02:00">UTC+02:00 (EET)</option>
+                                                <option value="UTC+03:00">UTC+03:00 (MSK)</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="schedule-message">What would you like to discuss? *</label>
+                                            <textarea id="schedule-message" name="message" rows="4" 
+                                                    placeholder="Tell me about your project, goals, or any specific topics you'd like to cover during our call..." required></textarea>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary btn-full">
+                                            Schedule Call
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resume Page -->
+            <div id="resume-page" class="page">
+                <div class="page-header">
+                    <div class="page-nav">
+                        <button class="btn btn-back" onclick="navigateTo('home')">
+                            <i data-lucide="arrow-left"></i>
+                            Back to Portfolio
+                        </button>
+                        <button class="btn btn-primary" onclick="downloadResume()">
+                            <i data-lucide="download"></i>
+                            Download PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="page-content">
+                    <div class="resume-container">
+                        <!-- Resume Header -->
+                        <div class="resume-header card">
+                            <div class="resume-info">
+                                <h1 class="gradient-text">Kwizera Arsene</h1>
+                                <h2>Full Stack Developer & UI/UX Designer</h2>
+                                
+                                <div class="resume-contact">
+                                    <div class="contact-item">
+                                        <i data-lucide="map-pin"></i>
+                                        <span>Kigali, Rwanda</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i data-lucide="phone"></i>
+                                        <span>+250 123 456 789</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i data-lucide="mail"></i>
+                                        <span>kwizerarsn@gmail.com</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i data-lucide="globe"></i>
+                                        <span>www.kwizerarsene.dev</span>
+                                    </div>
+                                </div>
+
+                                <div class="resume-summary">
+                                    <p>Passionate full-stack developer with 5+ years of experience creating scalable web applications and beautiful user interfaces. Specialized in React, Node.js, and modern design principles. Committed to delivering high-quality solutions that drive business growth.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resume-content">
+                            <!-- Experience -->
+                            <div class="resume-section">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3><i data-lucide="briefcase"></i> Professional Experience</h3>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="resume-item">
+                                            <div class="resume-item-header">
+                                                <h4>Senior Full Stack Developer</h4>
+                                                <div class="resume-meta">
+                                                    <span>TechCorp Solutions</span>
+                                                    <span>•</span>
+                                                    <span>Remote</span>
+                                                    <span>•</span>
+                                                    <span><i data-lucide="calendar"></i> 2022 - Present</span>
+                                                </div>
+                                            </div>
+                                            <p>Lead development of enterprise-level web applications, managing a team of 4 developers and implementing CI/CD pipelines.</p>
+                                            <ul>
+                                                <li>Increased application performance by 40% through optimization</li>
+                                                <li>Led migration from legacy system to modern React/Node.js stack</li>
+                                                <li>Mentored junior developers and established coding standards</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="resume-item">
+                                            <div class="resume-item-header">
+                                                <h4>Full Stack Developer</h4>
+                                                <div class="resume-meta">
+                                                    <span>Digital Innovations Ltd</span>
+                                                    <span>•</span>
+                                                    <span>Kigali, Rwanda</span>
+                                                    <span>•</span>
+                                                    <span><i data-lucide="calendar"></i> 2020 - 2022</span>
+                                                </div>
+                                            </div>
+                                            <p>Developed responsive web applications using React, Express.js, and MongoDB. Collaborated with design team to implement pixel-perfect UIs.</p>
+                                            <ul>
+                                                <li>Built 15+ production applications serving 10k+ users</li>
+                                                <li>Reduced development time by 30% through component reusability</li>
+                                                <li>Implemented automated testing reducing bugs by 50%</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="resume-item">
+                                            <div class="resume-item-header">
+                                                <h4>Frontend Developer</h4>
+                                                <div class="resume-meta">
+                                                    <span>StartupHub Rwanda</span>
+                                                    <span>•</span>
+                                                    <span>Kigali, Rwanda</span>
+                                                    <span>•</span>
+                                                    <span><i data-lucide="calendar"></i> 2019 - 2020</span>
+                                                </div>
+                                            </div>
+                                            <p>Created modern, responsive user interfaces for various startup projects. Worked closely with UX designers to implement design systems.</p>
+                                            <ul>
+                                                <li>Delivered 20+ responsive websites and web applications</li>
+                                                <li>Improved user engagement by 35% through UX improvements</li>
+                                                <li>Established design system used across multiple projects</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education -->
+                            <div class="resume-section">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3><i data-lucide="graduation-cap"></i> Education</h3>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="resume-item">
+                                            <div class="resume-item-header">
+                                                <h4>Bachelor of Science in Computer Science</h4>
+                                                <div class="resume-meta">
+                                                    <span>University of Rwanda</span>
+                                                    <span>•</span>
+                                                    <span>Kigali, Rwanda</span>
+                                                    <span>•</span>
+                                                    <span>2015 - 2019</span>
+                                                    <span>•</span>
+                                                    <span>GPA: 3.8/4.0</span>
+                                                </div>
+                                            </div>
+                                            <div class="resume-tags">
+                                                <span class="tag">Summa Cum Laude</span>
+                                                <span class="tag">Dean's List (4 semesters)</span>
+                                                <span class="tag">Computer Science Society President</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="resume-item">
+                                            <div class="resume-item-header">
+                                                <h4>Full Stack Web Development Bootcamp</h4>
+                                                <div class="resume-meta">
+                                                    <span>CodeCamp Rwanda</span>
+                                                    <span>•</span>
+                                                    <span>Kigali, Rwanda</span>
+                                                    <span>•</span>
+                                                    <span>2018</span>
+                                                </div>
+                                            </div>
+                                            <div class="resume-tags">
+                                                <span class="tag">Top Graduate</span>
+                                                <span class="tag">Best Final Project Award</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="resume-section">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3><i data-lucide="code"></i> Technical Skills</h3>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="skills-grid">
+                                            <div class="skill-group">
+                                                <h4>Frontend</h4>
+                                                <div class="skill-tags">
+                                                    <span class="skill-tag">React</span>
+                                                    <span class="skill-tag">Next.js</span>
+                                                    <span class="skill-tag">TypeScript</span>
+                                                    <span class="skill-tag">Tailwind CSS</span>
+                                                    <span class="skill-tag">Vue.js</span>
+                                                    <span class="skill-tag">Angular</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-group">
+                                                <h4>Backend</h4>
+                                                <div class="skill-tags">
+                                                    <span class="skill-tag">Node.js</span>
+                                                    <span class="skill-tag">Express.js</span>
+                                                    <span class="skill-tag">Python</span>
+                                                    <span class="skill-tag">Django</span>
+                                                    <span class="skill-tag">PHP</span>
+                                                    <span class="skill-tag">Laravel</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-group">
+                                                <h4>Database</h4>
+                                                <div class="skill-tags">
+                                                    <span class="skill-tag">MongoDB</span>
+                                                    <span class="skill-tag">PostgreSQL</span>
+                                                    <span class="skill-tag">MySQL</span>
+                                                    <span class="skill-tag">Redis</span>
+                                                    <span class="skill-tag">Firebase</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-group">
+                                                <h4>Cloud & DevOps</h4>
+                                                <div class="skill-tags">
+                                                    <span class="skill-tag">AWS</span>
+                                                    <span class="skill-tag">Docker</span>
+                                                    <span class="skill-tag">Git</span>
+                                                    <span class="skill-tag">CI/CD</span>
+                                                    <span class="skill-tag">Linux</span>
+                                                    <span class="skill-tag">Nginx</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certifications -->
+                            <div class="resume-section">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3><i data-lucide="award"></i> Certifications</h3>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="certifications">
+                                            <div class="cert-item">
+                                                <h4>AWS Certified Developer</h4>
+                                                <p>Amazon Web Services • 2023</p>
+                                            </div>
+                                            <div class="cert-item">
+                                                <h4>Google Analytics Certified</h4>
+                                                <p>Google • 2022</p>
+                                            </div>
+                                            <div class="cert-item">
+                                                <h4>Certified Scrum Master</h4>
+                                                <p>Scrum Alliance • 2021</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Page -->
+            <div id="contact-page" class="page">
+                <div class="page-header">
+                    <button class="btn btn-back" onclick="navigateTo('home')">
+                        <i data-lucide="arrow-left"></i>
+                        Back to Portfolio
+                    </button>
+
+                    <div class="page-title">
+                        <h1 class="gradient-text">Get In Touch</h1>
+                        <p>I'm always interested in new opportunities and collaborations. 
+                           Let's discuss how we can work together to bring your ideas to life.</p>
+                    </div>
+                </div>
+
+                <div class="page-content">
+                    <div class="contact-container">
+                        <div class="contact-sidebar">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Contact Information</h3>
+                                </div>
+                                <div class="card-content">
+                                    <div class="contact-methods">
+                                        <a href="mailto:kwizerarsn@gmail.com" class="contact-method">
+                                            <div class="contact-icon">
+                                                <i data-lucide="mail"></i>
+                                            </div>
+                                            <div class="contact-details">
+                                                <h4>Email</h4>
+                                                <span>kwizerarsn@gmail.com</span>
+                                            </div>
+                                        </a>
+
+                                        <a href="tel:+250788123456" class="contact-method">
+                                            <div class="contact-icon">
+                                                <i data-lucide="phone"></i>
+                                            </div>
+                                            <div class="contact-details">
+                                                <h4>Phone</h4>
+                                                <span>+250 788 123 456</span>
+                                            </div>
+                                        </a>
+
+                                        <div class="contact-method">
+                                            <div class="contact-icon">
+                                                <i data-lucide="map-pin"></i>
+                                            </div>
+                                            <div class="contact-details">
+                                                <h4>Location</h4>
+                                                <span>Kigali, Rwanda</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Connect With Me</h3>
+                                </div>
+                                <div class="card-content">
+                                    <div class="social-links">
+                                        <a href="https://github.com/kwizera-arsene" target="_blank" class="social-link">
+                                            <i data-lucide="github"></i>
+                                        </a>
+                                        <a href="https://linkedin.com/in/kwizera-arsene" target="_blank" class="social-link">
+                                            <i data-lucide="linkedin"></i>
+                                        </a>
+                                        <a href="https://twitter.com/kwizera_arsene" target="_blank" class="social-link">
+                                            <i data-lucide="twitter"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="availability-card">
+                                <div class="status-indicator"></div>
+                                <div class="status-info">
+                                    <h4>Available for Work</h4>
+                                    <p>Currently accepting new projects and opportunities</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-main">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3><i data-lucide="send"></i> Send Me a Message</h3>
+                                </div>
+                                <div class="card-content">
+                                    <form id="contact-form" class="contact-form">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="contact-name">Name *</label>
+                                                <input type="text" id="contact-name" name="name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="contact-email">Email *</label>
+                                                <input type="email" id="contact-email" name="email" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="contact-subject">Subject *</label>
+                                            <input type="text" id="contact-subject" name="subject" 
+                                                   placeholder="Project inquiry, collaboration, etc." required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="contact-message">Message *</label>
+                                            <textarea id="contact-message" name="message" rows="6" 
+                                                    placeholder="Tell me about your project, goals, timeline, budget, or any questions you have..." required></textarea>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary btn-full">
+                                            <span class="btn-text">Send Message</span>
+                                            <span class="btn-loading hidden">
+                                                <i data-lucide="loader-2" class="spinner"></i>
+                                                Sending...
+                                            </span>
+                                            <i data-lucide="send"></i>
+                                        </button>
+
+                                        <div class="form-footer">
+                                            <p>I typically respond within 24 hours</p>
+                                            <p>For urgent matters, feel free to call me directly</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="faq-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Frequently Asked Questions</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="faq-grid">
+                                    <div class="faq-item">
+                                        <h4>What's your typical response time?</h4>
+                                        <p>I respond to all inquiries within 24 hours, usually much sooner during business hours.</p>
+                                    </div>
+                                    <div class="faq-item">
+                                        <h4>Do you work with international clients?</h4>
+                                        <p>Yes! I work with clients globally and can accommodate different time zones for meetings.</p>
+                                    </div>
+                                    <div class="faq-item">
+                                        <h4>What information should I include in my message?</h4>
+                                        <p>Please include project details, timeline, budget range, and any specific requirements or questions.</p>
+                                    </div>
+                                    <div class="faq-item">
+                                        <h4>Do you offer free consultations?</h4>
+                                        <p>Yes, I offer 30-minute free consultation calls to discuss your project and see if we're a good fit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="bg-shape bg-shape-1"></div>
+        <div class="bg-shape bg-shape-2"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // Initialize splash screen behavior
+        document.addEventListener('DOMContentLoaded', () => {
+            const splashScreen = document.getElementById('splash-screen');
+            const mainContent = document.getElementById('main-content');
+            
+            // Show splash screen for 3 seconds
+            setTimeout(() => {
+                splashScreen.classList.add('exit');
+                
+                // After exit animation, hide splash and show main content
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    mainContent.classList.remove('hidden');
+                    mainContent.classList.add('page-3d-enter');
+                }, 1000);
+            }, 3000);
+        });
+    </script>
+    <script src="js/animations.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
