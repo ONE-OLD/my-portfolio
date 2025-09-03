@@ -2,12 +2,6 @@
 
 /* CSS Variables */
 :root {
-  /* Z-index levels */
-  --z-splash: 9999;
-  --z-header: 1000;
-  --z-modal: 1050;
-  --z-toast: 1100;
-
   /* Colors */
   --background: #0a0a0f;
   --foreground: #ffffff;
